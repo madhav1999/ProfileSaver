@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+
+{% block content %}
+        <h1>Welcome, good day!</h1>
+        <p>Today is {{today}}</p></br></br>
+        <a href="{% url 'allTabsY.list' %}" class="btn btn-secondary">view/edit details</a>
+
+{% endblock %} 

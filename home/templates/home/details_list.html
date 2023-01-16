@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1 classs="my-5"> This is all the data:of {{details.user}}</h1>
+    {%if details.count == 0 %}
+    <h2>it seems you are a new user, please enter the details by clicking below link</h2>
+    <a href="{% url 'forYou.new' %}" class="btn btn-secondary">enter details</a>
+    {%endif%}
+    {% for i in details%}
+    <h4 classs="my-5"><u><emp>FirstName:{{i.FirstName}}</emp></u></h4>
+    <h4 classs="my-5"><u><emp>LastName:{{i.LastName}}</emp></u></h4>
+    <h4 classs="my-5"><u><emp>State:{{i.State}}</emp></u></h4>
+    <h4 classs="my-5"><u><emp>Country:{{i.Country}}</emp></u></h4>
+    <h4 classs="my-5"><u><emp>dateofbirth:{{i.DateofBirth}}</emp></u></h4>
+    <h4 classs="my-5"><u><emp>Email:{{i.EmailName}}</emp></u></h4>
+
+
+    </br></br>
+    <a href="{% url 'forYou.update' pk=i.id%}" class="btn btn-secondary">edit</a>
+    {%endfor%}
+</br>
+</br>
+
+{% endblock %}
